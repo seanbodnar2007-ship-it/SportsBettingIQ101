@@ -1,145 +1,32 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SportBettingIQ101</title>
-
 <style>
 *{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#070b14;
-  color:white;
-}
-
-header{
-  background:#0f172a;
-  padding:22px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid #1e293b;
-}
-
-.logo{
-  font-size:28px;
-  font-weight:900;
-  color:#22c55e;
-}
-
-nav a{
-  color:#e5e7eb;
-  text-decoration:none;
-  margin-left:22px;
-  font-weight:bold;
-}
-
-.hero{
-  padding:90px 8%;
-  text-align:center;
-  background:linear-gradient(135deg,#020617,#0f172a,#064e3b);
-}
-
-.hero h1{
-  font-size:54px;
-  margin:0;
-}
-
-.hero p{
-  color:#cbd5e1;
-  font-size:21px;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:25px;
-  background:#22c55e;
-  color:#020617;
-  padding:15px 32px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:900;
-}
-
-.section{
-  padding:55px 8%;
-}
-
-.section h2{
-  font-size:34px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:22px;
-}
-
-.card{
-  background:#111827;
-  border:1px solid #1f2937;
-  border-radius:18px;
-  padding:24px;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-
-.tag{
-  display:inline-block;
-  background:#064e3b;
-  color:#86efac;
-  padding:7px 12px;
-  border-radius:20px;
-  font-size:13px;
-  font-weight:bold;
-}
-
-.pick{
-  font-size:28px;
-  font-weight:900;
-  margin:14px 0;
-}
-
-.stat{
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px solid #263244;
-  padding:11px 0;
-  color:#d1d5db;
-}
-
-.edge{
-  color:#22c55e;
-  font-weight:900;
-}
-
-.warning{
-  color:#facc15;
-  font-size:14px;
-  margin-top:12px;
-}
-
-.premium{
-  background:linear-gradient(135deg,#1e1b4b,#111827);
-  border:1px solid #6366f1;
-}
-
-footer{
-  text-align:center;
-  padding:35px;
-  background:#0f172a;
-  color:#94a3b8;
-}
-
-@media(max-width:700px){
-  header{display:block;text-align:center}
-  nav{margin-top:15px}
-  nav a{display:inline-block;margin:8px}
-  .hero h1{font-size:38px}
-}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#070b14;color:white}
+header{background:#0f172a;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e293b}
+.logo{font-size:28px;font-weight:900;color:#22c55e}
+nav a{color:#e5e7eb;text-decoration:none;margin-left:20px;font-weight:bold}
+.hero{padding:80px 8%;text-align:center;background:linear-gradient(135deg,#020617,#0f172a,#064e3b)}
+.hero h1{font-size:52px;margin:0}
+.hero p{font-size:20px;color:#cbd5e1}
+.section{padding:50px 8%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.card{background:#111827;border:1px solid #1f2937;border-radius:18px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.tag{display:inline-block;background:#064e3b;color:#86efac;padding:7px 12px;border-radius:20px;font-size:13px;font-weight:bold}
+.yellow{background:#422006;color:#fde68a}
+.purple{background:#312e81;color:#c4b5fd}
+.red{background:#450a0a;color:#fecaca}
+h1,h2,h3{margin-top:0}
+.stat{display:flex;justify-content:space-between;border-bottom:1px solid #263244;padding:10px 0;color:#d1d5db;gap:15px}
+.edge{color:#22c55e;font-weight:900}
+.note{color:#94a3b8;font-size:14px;line-height:1.5}
+.big{font-size:30px;font-weight:900;margin:12px 0}
+footer{text-align:center;padding:35px;background:#0f172a;color:#94a3b8}
+@media(max-width:700px){header{display:block;text-align:center}nav{margin-top:15px}nav a{display:inline-block;margin:8px}.hero h1{font-size:36px}}
 </style>
 </head>
 
@@ -148,113 +35,174 @@ footer{
 <header>
   <div class="logo">SportBettingIQ101</div>
   <nav>
-    <a href="#picks">Picks</a>
-    <a href="#matchups">Matchups</a>
-    <a href="#premium">Premium</a>
-    <a href="#results">Results</a>
+    <a href="#board">Board</a>
+    <a href="#props">Props</a>
+    <a href="#splits">Splits</a>
+    <a href="#sources">Sources</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Smarter Sports Betting Research</h1>
-  <p>Betting splits, line movement, matchup stats, value edges, and daily MLB research in one place.</p>
-  <a class="btn" href="#picks">View Today’s Board</a>
+  <h1>July 4 MLB Research Board</h1>
+  <p>Matchup data, pitching notes, team trends, HR props, betting splits watchlist, and research-only angles.</p>
 </section>
 
-<section class="section" id="picks">
-  <h2>🔥 Featured Pick of the Day</h2>
+<section class="section">
+  <div class="card">
+    <span class="tag">Important</span>
+    <h2>Research Only — Not Picks</h2>
+    <p class="note">This page is built to show useful betting research: ERA, OPS, probable pitchers, public betting notes, line movement placeholders, and prop watchlists. It is not telling users what to bet.</p>
+  </div>
+</section>
+
+<section class="section" id="board">
+  <h2>⚾ Featured July 4 Matchups</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="tag">Pitching Edge Watch</span>
+      <h3>Pirates @ Nationals</h3>
+      <div class="stat"><span>Time</span><span>11:05 AM ET</span></div>
+      <div class="stat"><span>PIT Starter</span><span>Braxton Ashcraft</span></div>
+      <div class="stat"><span>Ashcraft</span><span class="edge">8-3, 3.33 ERA</span></div>
+      <div class="stat"><span>WSH Starter</span><span>Zack Littell</span></div>
+      <div class="stat"><span>Littell</span><span>7-6, 5.29 ERA</span></div>
+      <p class="note">Ashcraft has won three straight starts. Littell’s Nationals are 9-8 in his starts this season.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag yellow">Injury Return</span>
+      <h3>Reds @ Orioles</h3>
+      <div class="stat"><span>Key Story</span><span>Hunter Greene returns</span></div>
+      <div class="stat"><span>Career ERA</span><span>3.65</span></div>
+      <div class="stat"><span>Career Ks</span><span class="edge">617 in 495.2 IP</span></div>
+      <div class="stat"><span>2025 ERA</span><span>2.76</span></div>
+      <div class="stat"><span>Rehab</span><span>14.1 scoreless IP</span></div>
+      <p class="note">Greene is reportedly not limited after elbow surgery rehab. That makes this a major pitching-watch game.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">Staff Mismatch</span>
+      <h3>Brewers @ Diamondbacks</h3>
+      <div class="stat"><span>MIL Starter</span><span>Brandon Woodruff</span></div>
+      <div class="stat"><span>Woodruff</span><span class="edge">2-1, 2.59 ERA</span></div>
+      <div class="stat"><span>ARI Starter</span><span>Merrill Kelly</span></div>
+      <div class="stat"><span>Kelly</span><span>5-8, 5.84 ERA</span></div>
+      <div class="stat"><span>MIL Team ERA</span><span class="edge">3.36, tied 1st</span></div>
+      <div class="stat"><span>ARI Team ERA</span><span>4.32, 20th</span></div>
+      <p class="note">Milwaukee owns a top-tier staff profile. Arizona’s offense is listed at .694 OPS, tied 26th.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag purple">Offense vs Pitching</span>
+      <h3>Brewers @ Diamondbacks</h3>
+      <div class="stat"><span>MIL Slash</span><span class="edge">.254 / .339 / .396</span></div>
+      <div class="stat"><span>MIL OPS</span><span>.734, 10th</span></div>
+      <div class="stat"><span>MIL Runs</span><span class="edge">436, 5th</span></div>
+      <div class="stat"><span>ARI Slash</span><span>.238 / .308 / .386</span></div>
+      <div class="stat"><span>ARI OPS</span><span>.694, tied 26th</span></div>
+      <div class="stat"><span>ARI Runs</span><span>367, 19th</span></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Rivalry Watch</span>
+      <h3>Mets @ Braves</h3>
+      <div class="stat"><span>NYM Record</span><span>36-51</span></div>
+      <div class="stat"><span>ATL Record</span><span class="edge">50-35</span></div>
+      <div class="stat"><span>Pitching</span><span>Sean Manaea vs Chris Sale</span></div>
+      <div class="stat"><span>Mets Recent RISP</span><span>2-for-25 over 4 games</span></div>
+      <p class="note">Mets have struggled badly with runners in scoring position. Braves have the better record and Chris Sale listed for Saturday.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag red">Coors Field</span>
+      <h3>Giants @ Rockies</h3>
+      <div class="stat"><span>Game</span><span>6:10 PM MDT</span></div>
+      <div class="stat"><span>SF Starter</span><span>Robbie Ray</span></div>
+      <div class="stat"><span>Ray</span><span class="edge">7-6, 3.39 ERA</span></div>
+      <div class="stat"><span>COL Starter</span><span>Tomoyuki Sugano</span></div>
+      <div class="stat"><span>Sugano</span><span>8-4, 4.80 ERA</span></div>
+      <p class="note">Colorado scored 15 runs and 18 hits last game. Coors always deserves extra total/HR attention.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="props">
+  <h2>💣 HR Prop Research Watchlist</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="tag">HR Prop</span>
+      <h3>Brandon Lowe</h3>
+      <div class="big">+210</div>
+      <p class="note">Listed by FanDuel Research as one of today’s top HR props.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">HR Prop</span>
+      <h3>Bryce Harper</h3>
+      <div class="big">+420</div>
+      <p class="note">Left-handed power bat listed on today’s HR prop board.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">HR Prop</span>
+      <h3>Max Muncy</h3>
+      <div class="big">+400</div>
+      <p class="note">Power profile makes him a home-run-market watch name today.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="splits">
+  <h2>📊 Betting Splits Tracker</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="tag yellow">Manual Update</span>
+      <h3>Sharp Money Signal</h3>
+      <div class="stat"><span>Public Bets</span><span>Enter %</span></div>
+      <div class="stat"><span>Money Split</span><span>Enter %</span></div>
+      <div class="stat"><span>Line Movement</span><span>Open → Current</span></div>
+      <p class="note">Sharp signal usually means lower bet % but higher money %. Example: 35% of bets but 60% of money.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag">What to Track</span>
+      <h3>Useful Split Categories</h3>
+      <div class="stat"><span>Moneyline</span><span>Bet % vs Money %</span></div>
+      <div class="stat"><span>Run Line</span><span>Bet % vs Money %</span></div>
+      <div class="stat"><span>Total</span><span>Over/Under %</span></div>
+      <div class="stat"><span>Props</span><span>HR, hits, Ks</span></div>
+    </div>
+
+    <div class="card">
+      <span class="tag purple">Risk Note</span>
+      <h3>Do Not Fake Splits</h3>
+      <p class="note">If you cannot verify public bet and money percentages, leave them blank or mark them as “updating.” Fake split data kills credibility fast.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="sources">
+  <h2>🧾 Data Sources Used</h2>
 
   <div class="card">
-    <span class="tag">Best Value</span>
-    <div class="pick">Phillies Moneyline</div>
-
-    <div class="stat"><span>Vegas Implied Probability</span><span>52%</span></div>
-    <div class="stat"><span>Model Projection</span><span>58%</span></div>
-    <div class="stat"><span>Value Edge</span><span class="edge">+6%</span></div>
-    <div class="stat"><span>Public Bets</span><span>41%</span></div>
-    <div class="stat"><span>Money Percentage</span><span>63%</span></div>
-
-    <p class="warning">Note: Replace these numbers with today’s real data before posting.</p>
-  </div>
-</section>
-
-<section class="section" id="matchups">
-  <h2>⚾ Today’s MLB Matchup Board</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <span class="tag">Sharp Money Watch</span>
-      <h3>Phillies vs Royals</h3>
-      <div class="stat"><span>Pick</span><span>Phillies ML</span></div>
-      <div class="stat"><span>Line Movement</span><span>-120 → -135</span></div>
-      <div class="stat"><span>Bet Split</span><span>41%</span></div>
-      <div class="stat"><span>Money Split</span><span class="edge">63%</span></div>
-      <div class="stat"><span>Confidence</span><span>7.8/10</span></div>
-    </div>
-
-    <div class="card">
-      <span class="tag">Total Watch</span>
-      <h3>Rays vs Orioles</h3>
-      <div class="stat"><span>Pick</span><span>Under 8.5</span></div>
-      <div class="stat"><span>Wind</span><span>In from CF</span></div>
-      <div class="stat"><span>Pitching Edge</span><span>Strong</span></div>
-      <div class="stat"><span>Public Bets</span><span>36%</span></div>
-      <div class="stat"><span>Money Split</span><span class="edge">59%</span></div>
-    </div>
-
-    <div class="card">
-      <span class="tag">Underdog Value</span>
-      <h3>Rangers vs Blue Jays</h3>
-      <div class="stat"><span>Pick</span><span>Rangers ML</span></div>
-      <div class="stat"><span>Odds</span><span>+125</span></div>
-      <div class="stat"><span>Implied Chance</span><span>44%</span></div>
-      <div class="stat"><span>Projected Chance</span><span class="edge">50%</span></div>
-      <div class="stat"><span>Value Edge</span><span class="edge">+6%</span></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="premium">
-  <h2>💎 Premium Picks</h2>
-
-  <div class="card premium">
-    <h3>Coming Soon</h3>
-    <p>Premium members will get top-rated picks, props, underdog value plays, sharp-money alerts, and weekly betting reports.</p>
-    <a class="btn" href="#">Join Waitlist</a>
-  </div>
-</section>
-
-<section class="section" id="results">
-  <h2>📈 Results Tracker</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Overall Record</h3>
-      <div class="pick">0-0</div>
-      <p>Start tracking every posted play publicly.</p>
-    </div>
-
-    <div class="card">
-      <h3>ROI</h3>
-      <div class="pick">0%</div>
-      <p>Track profit/loss transparently.</p>
-    </div>
-
-    <div class="card">
-      <h3>Best Category</h3>
-      <div class="pick">TBD</div>
-      <p>Moneyline, totals, props, or underdogs.</p>
-    </div>
+    <p class="note">
+      Sources checked: FanDuel Research, Reuters, MLB probable pitchers, ScoresAndOdds, SportsBettingDime, Bucs Dugout, Brew Crew Ball, Amazin’ Avenue, and Purple Row.
+    </p>
   </div>
 </section>
 
 <footer>
-  SportBettingIQ101 © 2026 | Research-based betting content. Not financial advice.
+  SportBettingIQ101 © 2026 | Research-only sports betting content. Bet responsibly.
 </footer>
 
 </body>
 </html>
-
-
