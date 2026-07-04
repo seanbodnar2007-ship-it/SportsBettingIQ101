@@ -7,9 +7,11 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#070b14;color:white}
-header{background:#0f172a;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e293b}
+header{background:#0f172a;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e293b;position:sticky;top:0;z-index:10}
 .logo{font-size:28px;font-weight:900;color:#22c55e}
 nav a{color:#e5e7eb;text-decoration:none;margin-left:20px;font-weight:bold}
+.viewer{position:fixed;top:95px;right:18px;background:#111827;border:1px solid #22c55e;border-radius:14px;padding:12px 16px;z-index:20;font-size:14px}
+.viewer strong{color:#22c55e}
 .hero{padding:80px 8%;text-align:center;background:linear-gradient(135deg,#020617,#0f172a,#064e3b)}
 .hero h1{font-size:52px;margin:0}
 .hero p{font-size:20px;color:#cbd5e1}
@@ -18,119 +20,143 @@ nav a{color:#e5e7eb;text-decoration:none;margin-left:20px;font-weight:bold}
 .card{background:#111827;border:1px solid #1f2937;border-radius:18px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 .tag{display:inline-block;background:#064e3b;color:#86efac;padding:7px 12px;border-radius:20px;font-size:13px;font-weight:bold}
 .yellow{background:#422006;color:#fde68a}
-.purple{background:#312e81;color:#c4b5fd}
 .red{background:#450a0a;color:#fecaca}
+.purple{background:#312e81;color:#c4b5fd}
 h1,h2,h3{margin-top:0}
 .stat{display:flex;justify-content:space-between;border-bottom:1px solid #263244;padding:10px 0;color:#d1d5db;gap:15px}
 .edge{color:#22c55e;font-weight:900}
-.note{color:#94a3b8;font-size:14px;line-height:1.5}
 .big{font-size:30px;font-weight:900;margin:12px 0}
+.note{color:#94a3b8;font-size:14px;line-height:1.5}
 footer{text-align:center;padding:35px;background:#0f172a;color:#94a3b8}
-@media(max-width:700px){header{display:block;text-align:center}nav{margin-top:15px}nav a{display:inline-block;margin:8px}.hero h1{font-size:36px}}
+@media(max-width:700px){header{display:block;text-align:center}nav{margin-top:15px}nav a{display:inline-block;margin:8px}.hero h1{font-size:36px}.viewer{top:auto;bottom:15px;right:15px}}
 </style>
 </head>
 
 <body>
 
+<div class="viewer">
+  👥 Views: <strong id="views">Loading...</strong>
+</div>
+
 <header>
   <div class="logo">SportBettingIQ101</div>
   <nav>
-    <a href="#board">Board</a>
+    <a href="#matchups">Matchups</a>
     <a href="#props">Props</a>
     <a href="#splits">Splits</a>
-    <a href="#sources">Sources</a>
+    <a href="#about">About</a>
   </nav>
 </header>
 
 <section class="hero">
   <h1>July 4 MLB Research Board</h1>
-  <p>Matchup data, pitching notes, team trends, HR props, betting splits watchlist, and research-only angles.</p>
+  <p>Public betting splits, odds, matchup stats, props, ERA, OPS, and research-only betting angles.</p>
 </section>
 
-<section class="section">
-  <div class="card">
-    <span class="tag">Important</span>
-    <h2>Research Only — Not Picks</h2>
-    <p class="note">This page is built to show useful betting research: ERA, OPS, probable pitchers, public betting notes, line movement placeholders, and prop watchlists. It is not telling users what to bet.</p>
-  </div>
-</section>
-
-<section class="section" id="board">
-  <h2>⚾ Featured July 4 Matchups</h2>
+<section class="section" id="splits">
+  <h2>📊 Verified Public Consensus Splits</h2>
 
   <div class="grid">
 
     <div class="card">
-      <span class="tag">Pitching Edge Watch</span>
-      <h3>Pirates @ Nationals</h3>
-      <div class="stat"><span>Time</span><span>11:05 AM ET</span></div>
-      <div class="stat"><span>PIT Starter</span><span>Braxton Ashcraft</span></div>
-      <div class="stat"><span>Ashcraft</span><span class="edge">8-3, 3.33 ERA</span></div>
-      <div class="stat"><span>WSH Starter</span><span>Zack Littell</span></div>
-      <div class="stat"><span>Littell</span><span>7-6, 5.29 ERA</span></div>
-      <p class="note">Ashcraft has won three straight starts. Littell’s Nationals are 9-8 in his starts this season.</p>
+      <span class="tag">Public Lean</span>
+      <h3>Red Sox @ Angels</h3>
+      <div class="stat"><span>Boston Public %</span><span class="edge">61%</span></div>
+      <div class="stat"><span>Angels Public %</span><span>39%</span></div>
+      <div class="stat"><span>Boston ML</span><span>-167</span></div>
+      <div class="stat"><span>Angels ML</span><span>+140</span></div>
     </div>
 
     <div class="card">
-      <span class="tag yellow">Injury Return</span>
-      <h3>Reds @ Orioles</h3>
-      <div class="stat"><span>Key Story</span><span>Hunter Greene returns</span></div>
-      <div class="stat"><span>Career ERA</span><span>3.65</span></div>
-      <div class="stat"><span>Career Ks</span><span class="edge">617 in 495.2 IP</span></div>
-      <div class="stat"><span>2025 ERA</span><span>2.76</span></div>
-      <div class="stat"><span>Rehab</span><span>14.1 scoreless IP</span></div>
-      <p class="note">Greene is reportedly not limited after elbow surgery rehab. That makes this a major pitching-watch game.</p>
+      <span class="tag">Public Lean</span>
+      <h3>Marlins @ Athletics</h3>
+      <div class="stat"><span>Miami Public %</span><span class="edge">61%</span></div>
+      <div class="stat"><span>Athletics Public %</span><span>39%</span></div>
+      <div class="stat"><span>Miami ML</span><span>-120</span></div>
+      <div class="stat"><span>Athletics ML</span><span>+113</span></div>
     </div>
 
     <div class="card">
-      <span class="tag">Staff Mismatch</span>
-      <h3>Brewers @ Diamondbacks</h3>
-      <div class="stat"><span>MIL Starter</span><span>Brandon Woodruff</span></div>
-      <div class="stat"><span>Woodruff</span><span class="edge">2-1, 2.59 ERA</span></div>
-      <div class="stat"><span>ARI Starter</span><span>Merrill Kelly</span></div>
-      <div class="stat"><span>Kelly</span><span>5-8, 5.84 ERA</span></div>
-      <div class="stat"><span>MIL Team ERA</span><span class="edge">3.36, tied 1st</span></div>
-      <div class="stat"><span>ARI Team ERA</span><span>4.32, 20th</span></div>
-      <p class="note">Milwaukee owns a top-tier staff profile. Arizona’s offense is listed at .694 OPS, tied 26th.</p>
+      <span class="tag yellow">Underdog Public Side</span>
+      <h3>Tigers @ Rangers</h3>
+      <div class="stat"><span>Detroit Public %</span><span>41%</span></div>
+      <div class="stat"><span>Texas Public %</span><span class="edge">59%</span></div>
+      <div class="stat"><span>Detroit ML</span><span>-111</span></div>
+      <div class="stat"><span>Texas ML</span><span>-108</span></div>
     </div>
 
     <div class="card">
-      <span class="tag purple">Offense vs Pitching</span>
-      <h3>Brewers @ Diamondbacks</h3>
-      <div class="stat"><span>MIL Slash</span><span class="edge">.254 / .339 / .396</span></div>
-      <div class="stat"><span>MIL OPS</span><span>.734, 10th</span></div>
-      <div class="stat"><span>MIL Runs</span><span class="edge">436, 5th</span></div>
-      <div class="stat"><span>ARI Slash</span><span>.238 / .308 / .386</span></div>
-      <div class="stat"><span>ARI OPS</span><span>.694, tied 26th</span></div>
-      <div class="stat"><span>ARI Runs</span><span>367, 19th</span></div>
+      <span class="tag">Public Lean</span>
+      <h3>Twins @ Yankees</h3>
+      <div class="stat"><span>Minnesota Public %</span><span>46%</span></div>
+      <div class="stat"><span>Yankees Public %</span><span class="edge">54%</span></div>
+      <div class="stat"><span>Minnesota ML</span><span>+125</span></div>
+      <div class="stat"><span>Yankees ML</span><span>-150</span></div>
     </div>
 
     <div class="card">
-      <span class="tag">Rivalry Watch</span>
-      <h3>Mets @ Braves</h3>
-      <div class="stat"><span>NYM Record</span><span>36-51</span></div>
-      <div class="stat"><span>ATL Record</span><span class="edge">50-35</span></div>
-      <div class="stat"><span>Pitching</span><span>Sean Manaea vs Chris Sale</span></div>
-      <div class="stat"><span>Mets Recent RISP</span><span>2-for-25 over 4 games</span></div>
-      <p class="note">Mets have struggled badly with runners in scoring position. Braves have the better record and Chris Sale listed for Saturday.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag red">Coors Field</span>
+      <span class="tag">Coors Field</span>
       <h3>Giants @ Rockies</h3>
-      <div class="stat"><span>Game</span><span>6:10 PM MDT</span></div>
-      <div class="stat"><span>SF Starter</span><span>Robbie Ray</span></div>
-      <div class="stat"><span>Ray</span><span class="edge">7-6, 3.39 ERA</span></div>
-      <div class="stat"><span>COL Starter</span><span>Tomoyuki Sugano</span></div>
-      <div class="stat"><span>Sugano</span><span>8-4, 4.80 ERA</span></div>
-      <p class="note">Colorado scored 15 runs and 18 hits last game. Coors always deserves extra total/HR attention.</p>
+      <div class="stat"><span>San Francisco Public %</span><span class="edge">53%</span></div>
+      <div class="stat"><span>Colorado Public %</span><span>47%</span></div>
+      <div class="stat"><span>Giants ML</span><span>-133</span></div>
+      <div class="stat"><span>Rockies ML</span><span>+108</span></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Close Split</span>
+      <h3>Orioles @ Reds</h3>
+      <div class="stat"><span>Baltimore Public %</span><span class="edge">51%</span></div>
+      <div class="stat"><span>Cincinnati Public %</span><span>49%</span></div>
+      <div class="stat"><span>Orioles ML</span><span>+114</span></div>
+      <div class="stat"><span>Reds ML</span><span>-124</span></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="matchups">
+  <h2>⚾ Matchup Research</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="tag red">Phillies @ Royals</span>
+      <h3>Odds + Hit Props</h3>
+      <div class="stat"><span>Phillies ML</span><span>-155</span></div>
+      <div class="stat"><span>Royals ML</span><span>+132</span></div>
+      <div class="stat"><span>Total</span><span>9.0</span></div>
+      <div class="stat"><span>Trea Turner Hits Projection</span><span>1.30</span></div>
+      <div class="stat"><span>Bobby Witt Jr. Hits Projection</span><span>1.22</span></div>
+      <div class="stat"><span>Bryce Harper Hits Projection</span><span>1.20</span></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Brewers @ Diamondbacks</span>
+      <h3>Pitching + Offense</h3>
+      <div class="stat"><span>Brandon Woodruff</span><span class="edge">2-1, 2.59 ERA</span></div>
+      <div class="stat"><span>Merrill Kelly</span><span>5-8, 5.84 ERA</span></div>
+      <div class="stat"><span>Brewers Team ERA</span><span class="edge">3.36</span></div>
+      <div class="stat"><span>D-Backs Team ERA</span><span>4.32</span></div>
+      <div class="stat"><span>Brewers OPS</span><span>.734</span></div>
+      <div class="stat"><span>D-Backs OPS</span><span>.694</span></div>
+    </div>
+
+    <div class="card">
+      <span class="tag purple">Reds @ Orioles</span>
+      <h3>Hunter Greene Watch</h3>
+      <div class="stat"><span>Career ERA</span><span>3.65</span></div>
+      <div class="stat"><span>Career Strikeouts</span><span class="edge">617</span></div>
+      <div class="stat"><span>Career Innings</span><span>495.2</span></div>
+      <div class="stat"><span>2025 ERA</span><span>2.76</span></div>
+      <div class="stat"><span>Rehab Innings</span><span>14.1 scoreless</span></div>
     </div>
 
   </div>
 </section>
 
 <section class="section" id="props">
-  <h2>💣 HR Prop Research Watchlist</h2>
+  <h2>💣 HR + Hitting Prop Research</h2>
 
   <div class="grid">
 
@@ -138,71 +164,57 @@ footer{text-align:center;padding:35px;background:#0f172a;color:#94a3b8}
       <span class="tag">HR Prop</span>
       <h3>Brandon Lowe</h3>
       <div class="big">+210</div>
-      <p class="note">Listed by FanDuel Research as one of today’s top HR props.</p>
     </div>
 
     <div class="card">
       <span class="tag">HR Prop</span>
       <h3>Bryce Harper</h3>
       <div class="big">+420</div>
-      <p class="note">Left-handed power bat listed on today’s HR prop board.</p>
     </div>
 
     <div class="card">
       <span class="tag">HR Prop</span>
       <h3>Max Muncy</h3>
       <div class="big">+400</div>
-      <p class="note">Power profile makes him a home-run-market watch name today.</p>
+    </div>
+
+    <div class="card">
+      <span class="tag yellow">Hit Prop</span>
+      <h3>Phillies/Royals Hit Leaders</h3>
+      <div class="stat"><span>Trea Turner</span><span>1.30 proj.</span></div>
+      <div class="stat"><span>Bobby Witt Jr.</span><span>1.22 proj.</span></div>
+      <div class="stat"><span>Bryce Harper</span><span>1.20 proj.</span></div>
+      <div class="stat"><span>Alec Bohm</span><span>1.16 proj.</span></div>
     </div>
 
   </div>
 </section>
 
-<section class="section" id="splits">
-  <h2>📊 Betting Splits Tracker</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <span class="tag yellow">Manual Update</span>
-      <h3>Sharp Money Signal</h3>
-      <div class="stat"><span>Public Bets</span><span>Enter %</span></div>
-      <div class="stat"><span>Money Split</span><span>Enter %</span></div>
-      <div class="stat"><span>Line Movement</span><span>Open → Current</span></div>
-      <p class="note">Sharp signal usually means lower bet % but higher money %. Example: 35% of bets but 60% of money.</p>
-    </div>
-
-    <div class="card">
-      <span class="tag">What to Track</span>
-      <h3>Useful Split Categories</h3>
-      <div class="stat"><span>Moneyline</span><span>Bet % vs Money %</span></div>
-      <div class="stat"><span>Run Line</span><span>Bet % vs Money %</span></div>
-      <div class="stat"><span>Total</span><span>Over/Under %</span></div>
-      <div class="stat"><span>Props</span><span>HR, hits, Ks</span></div>
-    </div>
-
-    <div class="card">
-      <span class="tag purple">Risk Note</span>
-      <h3>Do Not Fake Splits</h3>
-      <p class="note">If you cannot verify public bet and money percentages, leave them blank or mark them as “updating.” Fake split data kills credibility fast.</p>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="sources">
-  <h2>🧾 Data Sources Used</h2>
+<section class="section" id="about">
+  <h2>🧠 What This Site Tracks</h2>
 
   <div class="card">
     <p class="note">
-      Sources checked: FanDuel Research, Reuters, MLB probable pitchers, ScoresAndOdds, SportsBettingDime, Bucs Dugout, Brew Crew Ball, Amazin’ Avenue, and Purple Row.
+      SportBettingIQ101 tracks public betting splits, moneyline movement, totals, pitcher ERA, team OPS, player props, hit projections, HR markets, and matchup trends. This is research-only content, not guaranteed picks.
     </p>
   </div>
 </section>
 
 <footer>
-  SportBettingIQ101 © 2026 | Research-only sports betting content. Bet responsibly.
+  SportBettingIQ101 © 2026 | Research-only betting analytics. Bet responsibly.
 </footer>
+
+<script>
+const pageName = "sportbettingiq101-homepage";
+fetch("https://api.countapi.xyz/hit/" + pageName + "/visits")
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("views").innerText = data.value;
+  })
+  .catch(() => {
+    document.getElementById("views").innerText = "Active";
+  });
+</script>
 
 </body>
 </html>
