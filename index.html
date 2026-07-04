@@ -4,216 +4,189 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SportBettingIQ101</title>
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#070b14;color:white}
 header{background:#0f172a;padding:22px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #1e293b;position:sticky;top:0;z-index:10}
 .logo{font-size:28px;font-weight:900;color:#22c55e}
 nav a{color:#e5e7eb;text-decoration:none;margin-left:20px;font-weight:bold}
-.viewer{position:fixed;top:95px;right:18px;background:#111827;border:1px solid #22c55e;border-radius:14px;padding:12px 16px;z-index:20;font-size:14px}
+.viewer{position:fixed;top:90px;right:18px;background:#111827;border:1px solid #22c55e;border-radius:14px;padding:12px 16px;z-index:20}
 .viewer strong{color:#22c55e}
 .hero{padding:80px 8%;text-align:center;background:linear-gradient(135deg,#020617,#0f172a,#064e3b)}
-.hero h1{font-size:52px;margin:0}
+.hero h1{font-size:50px;margin:0}
 .hero p{font-size:20px;color:#cbd5e1}
 .section{padding:50px 8%}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
 .card{background:#111827;border:1px solid #1f2937;border-radius:18px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 .tag{display:inline-block;background:#064e3b;color:#86efac;padding:7px 12px;border-radius:20px;font-size:13px;font-weight:bold}
 .yellow{background:#422006;color:#fde68a}
 .red{background:#450a0a;color:#fecaca}
-.purple{background:#312e81;color:#c4b5fd}
-h1,h2,h3{margin-top:0}
 .stat{display:flex;justify-content:space-between;border-bottom:1px solid #263244;padding:10px 0;color:#d1d5db;gap:15px}
 .edge{color:#22c55e;font-weight:900}
-.big{font-size:30px;font-weight:900;margin:12px 0}
 .note{color:#94a3b8;font-size:14px;line-height:1.5}
 footer{text-align:center;padding:35px;background:#0f172a;color:#94a3b8}
-@media(max-width:700px){header{display:block;text-align:center}nav{margin-top:15px}nav a{display:inline-block;margin:8px}.hero h1{font-size:36px}.viewer{top:auto;bottom:15px;right:15px}}
+@media(max-width:700px){header{display:block;text-align:center}nav a{display:inline-block;margin:8px}.hero h1{font-size:36px}.viewer{top:auto;bottom:15px;right:15px}}
 </style>
 </head>
 
 <body>
 
 <div class="viewer">
-  👥 Views: <strong id="views">Loading...</strong>
+👥 Views: <strong id="views">Loading...</strong>
 </div>
 
 <header>
-  <div class="logo">SportBettingIQ101</div>
-  <nav>
-    <a href="#matchups">Matchups</a>
-    <a href="#props">Props</a>
-    <a href="#splits">Splits</a>
-    <a href="#about">About</a>
-  </nav>
+<div class="logo">SportBettingIQ101</div>
+<nav>
+<a href="#games">Games</a>
+<a href="#splits">Splits</a>
+<a href="#props">Props</a>
+<a href="#about">About</a>
+</nav>
 </header>
 
 <section class="hero">
-  <h1>July 4 MLB Research Board</h1>
-  <p>Public betting splits, odds, matchup stats, props, ERA, OPS, and research-only betting angles.</p>
+<h1>Live MLB Research Board</h1>
+<p>Daily matchup research, live game board, odds-ready cards, props, betting splits, and public market tracking.</p>
+</section>
+
+<section class="section" id="games">
+<h2>⚾ Today’s MLB Games</h2>
+<div id="gameBoard" class="grid">
+<div class="card"><p>Loading today’s MLB slate...</p></div>
+</div>
 </section>
 
 <section class="section" id="splits">
-  <h2>📊 Verified Public Consensus Splits</h2>
+<h2>📊 Betting Splits Dashboard</h2>
 
-  <div class="grid">
+<div class="grid">
+<div class="card">
+<span class="tag yellow">API Ready</span>
+<h3>Public Bets vs Money</h3>
+<div class="stat"><span>Moneyline Splits</span><span>Connect API</span></div>
+<div class="stat"><span>Run Line Splits</span><span>Connect API</span></div>
+<div class="stat"><span>Total Splits</span><span>Connect API</span></div>
+<p class="note">Real betting splits usually require a paid data source like Action Network, VSIN, ScoresAndOdds, Covers consensus, or an odds/splits provider.</p>
+</div>
 
-    <div class="card">
-      <span class="tag">Public Lean</span>
-      <h3>Red Sox @ Angels</h3>
-      <div class="stat"><span>Boston Public %</span><span class="edge">61%</span></div>
-      <div class="stat"><span>Angels Public %</span><span>39%</span></div>
-      <div class="stat"><span>Boston ML</span><span>-167</span></div>
-      <div class="stat"><span>Angels ML</span><span>+140</span></div>
-    </div>
-
-    <div class="card">
-      <span class="tag">Public Lean</span>
-      <h3>Marlins @ Athletics</h3>
-      <div class="stat"><span>Miami Public %</span><span class="edge">61%</span></div>
-      <div class="stat"><span>Athletics Public %</span><span>39%</span></div>
-      <div class="stat"><span>Miami ML</span><span>-120</span></div>
-      <div class="stat"><span>Athletics ML</span><span>+113</span></div>
-    </div>
-
-    <div class="card">
-      <span class="tag yellow">Underdog Public Side</span>
-      <h3>Tigers @ Rangers</h3>
-      <div class="stat"><span>Detroit Public %</span><span>41%</span></div>
-      <div class="stat"><span>Texas Public %</span><span class="edge">59%</span></div>
-      <div class="stat"><span>Detroit ML</span><span>-111</span></div>
-      <div class="stat"><span>Texas ML</span><span>-108</span></div>
-    </div>
-
-    <div class="card">
-      <span class="tag">Public Lean</span>
-      <h3>Twins @ Yankees</h3>
-      <div class="stat"><span>Minnesota Public %</span><span>46%</span></div>
-      <div class="stat"><span>Yankees Public %</span><span class="edge">54%</span></div>
-      <div class="stat"><span>Minnesota ML</span><span>+125</span></div>
-      <div class="stat"><span>Yankees ML</span><span>-150</span></div>
-    </div>
-
-    <div class="card">
-      <span class="tag">Coors Field</span>
-      <h3>Giants @ Rockies</h3>
-      <div class="stat"><span>San Francisco Public %</span><span class="edge">53%</span></div>
-      <div class="stat"><span>Colorado Public %</span><span>47%</span></div>
-      <div class="stat"><span>Giants ML</span><span>-133</span></div>
-      <div class="stat"><span>Rockies ML</span><span>+108</span></div>
-    </div>
-
-    <div class="card">
-      <span class="tag">Close Split</span>
-      <h3>Orioles @ Reds</h3>
-      <div class="stat"><span>Baltimore Public %</span><span class="edge">51%</span></div>
-      <div class="stat"><span>Cincinnati Public %</span><span>49%</span></div>
-      <div class="stat"><span>Orioles ML</span><span>+114</span></div>
-      <div class="stat"><span>Reds ML</span><span>-124</span></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="section" id="matchups">
-  <h2>⚾ Matchup Research</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <span class="tag red">Phillies @ Royals</span>
-      <h3>Odds + Hit Props</h3>
-      <div class="stat"><span>Phillies ML</span><span>-155</span></div>
-      <div class="stat"><span>Royals ML</span><span>+132</span></div>
-      <div class="stat"><span>Total</span><span>9.0</span></div>
-      <div class="stat"><span>Trea Turner Hits Projection</span><span>1.30</span></div>
-      <div class="stat"><span>Bobby Witt Jr. Hits Projection</span><span>1.22</span></div>
-      <div class="stat"><span>Bryce Harper Hits Projection</span><span>1.20</span></div>
-    </div>
-
-    <div class="card">
-      <span class="tag">Brewers @ Diamondbacks</span>
-      <h3>Pitching + Offense</h3>
-      <div class="stat"><span>Brandon Woodruff</span><span class="edge">2-1, 2.59 ERA</span></div>
-      <div class="stat"><span>Merrill Kelly</span><span>5-8, 5.84 ERA</span></div>
-      <div class="stat"><span>Brewers Team ERA</span><span class="edge">3.36</span></div>
-      <div class="stat"><span>D-Backs Team ERA</span><span>4.32</span></div>
-      <div class="stat"><span>Brewers OPS</span><span>.734</span></div>
-      <div class="stat"><span>D-Backs OPS</span><span>.694</span></div>
-    </div>
-
-    <div class="card">
-      <span class="tag purple">Reds @ Orioles</span>
-      <h3>Hunter Greene Watch</h3>
-      <div class="stat"><span>Career ERA</span><span>3.65</span></div>
-      <div class="stat"><span>Career Strikeouts</span><span class="edge">617</span></div>
-      <div class="stat"><span>Career Innings</span><span>495.2</span></div>
-      <div class="stat"><span>2025 ERA</span><span>2.76</span></div>
-      <div class="stat"><span>Rehab Innings</span><span>14.1 scoreless</span></div>
-    </div>
-
-  </div>
+<div class="card">
+<span class="tag">Sharp Signal Tracker</span>
+<h3>What It Looks For</h3>
+<div class="stat"><span>Low Bet %</span><span>High Money %</span></div>
+<div class="stat"><span>Reverse Line Movement</span><span>Yes/No</span></div>
+<div class="stat"><span>Steam Move</span><span>Yes/No</span></div>
+</div>
+</div>
 </section>
 
 <section class="section" id="props">
-  <h2>💣 HR + Hitting Prop Research</h2>
+<h2>💣 Props Research</h2>
 
-  <div class="grid">
+<div class="grid">
+<div class="card">
+<span class="tag red">Coming Next</span>
+<h3>HR Props</h3>
+<div class="stat"><span>Player</span><span>Odds</span></div>
+<div class="stat"><span>Pitcher HR/9</span><span>Data API</span></div>
+<div class="stat"><span>Ballpark Factor</span><span>Data API</span></div>
+</div>
 
-    <div class="card">
-      <span class="tag">HR Prop</span>
-      <h3>Brandon Lowe</h3>
-      <div class="big">+210</div>
-    </div>
+<div class="card">
+<span class="tag">Hitting Props</span>
+<h3>Hits / Total Bases</h3>
+<div class="stat"><span>BA</span><span>Data API</span></div>
+<div class="stat"><span>OPS</span><span>Data API</span></div>
+<div class="stat"><span>vs LHP/RHP</span><span>Data API</span></div>
+</div>
 
-    <div class="card">
-      <span class="tag">HR Prop</span>
-      <h3>Bryce Harper</h3>
-      <div class="big">+420</div>
-    </div>
-
-    <div class="card">
-      <span class="tag">HR Prop</span>
-      <h3>Max Muncy</h3>
-      <div class="big">+400</div>
-    </div>
-
-    <div class="card">
-      <span class="tag yellow">Hit Prop</span>
-      <h3>Phillies/Royals Hit Leaders</h3>
-      <div class="stat"><span>Trea Turner</span><span>1.30 proj.</span></div>
-      <div class="stat"><span>Bobby Witt Jr.</span><span>1.22 proj.</span></div>
-      <div class="stat"><span>Bryce Harper</span><span>1.20 proj.</span></div>
-      <div class="stat"><span>Alec Bohm</span><span>1.16 proj.</span></div>
-    </div>
-
-  </div>
+<div class="card">
+<span class="tag">Pitcher Props</span>
+<h3>Strikeouts</h3>
+<div class="stat"><span>K/9</span><span>Data API</span></div>
+<div class="stat"><span>Opponent K%</span><span>Data API</span></div>
+<div class="stat"><span>Pitch Count</span><span>Data API</span></div>
+</div>
+</div>
 </section>
 
 <section class="section" id="about">
-  <h2>🧠 What This Site Tracks</h2>
-
-  <div class="card">
-    <p class="note">
-      SportBettingIQ101 tracks public betting splits, moneyline movement, totals, pitcher ERA, team OPS, player props, hit projections, HR markets, and matchup trends. This is research-only content, not guaranteed picks.
-    </p>
-  </div>
+<h2>🧠 Research-Only Platform</h2>
+<div class="card">
+<p class="note">SportBettingIQ101 is built for sports betting research: live MLB schedules, odds, splits, ERA, OPS, props, line movement, and market analysis. This is research content, not guaranteed picks.</p>
+</div>
 </section>
 
 <footer>
-  SportBettingIQ101 © 2026 | Research-only betting analytics. Bet responsibly.
+SportBettingIQ101 © 2026 | Research-only betting analytics. Bet responsibly.
 </footer>
 
 <script>
-const pageName = "sportbettingiq101-homepage";
-fetch("https://api.countapi.xyz/hit/" + pageName + "/visits")
-  .then(response => response.json())
-  .then(data => {
-    document.getElementById("views").innerText = data.value;
-  })
-  .catch(() => {
-    document.getElementById("views").innerText = "Active";
-  });
+// Live view counter
+fetch("https://api.countapi.xyz/hit/sportbettingiq101/homepage")
+.then(res => res.json())
+.then(data => {
+document.getElementById("views").innerText = data.value;
+})
+.catch(() => {
+document.getElementById("views").innerText = "Active";
+});
+
+// MLB live schedule from MLB public stats API
+const today = new Date();
+const yyyy = today.getFullYear();
+const mm = String(today.getMonth() + 1).padStart(2, "0");
+const dd = String(today.getDate()).padStart(2, "0");
+const dateString = `${yyyy}-${mm}-${dd}`;
+
+fetch(`https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=${dateString}&hydrate=probablePitcher,team,venue,linescore`)
+.then(res => res.json())
+.then(data => {
+const board = document.getElementById("gameBoard");
+board.innerHTML = "";
+
+if (!data.dates || data.dates.length === 0) {
+board.innerHTML = `<div class="card"><h3>No MLB games found today.</h3></div>`;
+return;
+}
+
+data.dates[0].games.forEach(game => {
+const away = game.teams.away.team.name;
+const home = game.teams.home.team.name;
+const awayScore = game.teams.away.score ?? "-";
+const homeScore = game.teams.home.score ?? "-";
+const status = game.status.detailedState;
+const venue = game.venue.name;
+const gameTime = new Date(game.gameDate).toLocaleTimeString([], {hour:"numeric", minute:"2-digit"});
+
+const awayPitcher = game.teams.away.probablePitcher ? game.teams.away.probablePitcher.fullName : "TBD";
+const homePitcher = game.teams.home.probablePitcher ? game.teams.home.probablePitcher.fullName : "TBD";
+
+board.innerHTML += `
+<div class="card">
+<span class="tag">${status}</span>
+<h3>${away} @ ${home}</h3>
+<div class="stat"><span>Start Time</span><span>${gameTime}</span></div>
+<div class="stat"><span>Venue</span><span>${venue}</span></div>
+<div class="stat"><span>Away Pitcher</span><span>${awayPitcher}</span></div>
+<div class="stat"><span>Home Pitcher</span><span>${homePitcher}</span></div>
+<div class="stat"><span>Score</span><span>${awayScore} - ${homeScore}</span></div>
+<div class="stat"><span>Odds</span><span>API Ready</span></div>
+<div class="stat"><span>Bet Splits</span><span>API Ready</span></div>
+<div class="stat"><span>Props</span><span>API Ready</span></div>
+</div>
+`;
+});
+})
+.catch(error => {
+document.getElementById("gameBoard").innerHTML = `
+<div class="card">
+<h3>Could not load MLB data.</h3>
+<p class="note">Check your internet connection or try again later.</p>
+</div>
+`;
+});
 </script>
 
 </body>
