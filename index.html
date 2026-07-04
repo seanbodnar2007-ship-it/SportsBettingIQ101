@@ -1,131 +1,264 @@
+
+
+Yes. Replace the old code with this **better version** in `index.html`.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>SportBettingIQ101</title>
 
 <style>
+*{box-sizing:border-box}
+
 body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#0b0f19;
-color:white;
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#070b14;
+  color:white;
 }
 
 header{
-background:#111827;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+  background:#0f172a;
+  padding:22px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #1e293b;
 }
 
 .logo{
-font-size:30px;
-font-weight:bold;
-color:#34d399;
+  font-size:28px;
+  font-weight:900;
+  color:#22c55e;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
+  color:#e5e7eb;
+  text-decoration:none;
+  margin-left:22px;
+  font-weight:bold;
 }
 
 .hero{
-text-align:center;
-padding:80px 20px;
+  padding:90px 8%;
+  text-align:center;
+  background:linear-gradient(135deg,#020617,#0f172a,#064e3b);
 }
 
 .hero h1{
-font-size:48px;
-margin-bottom:10px;
+  font-size:54px;
+  margin:0;
 }
 
 .hero p{
-font-size:22px;
-color:#cbd5e1;
+  color:#cbd5e1;
+  font-size:21px;
 }
 
-.button{
-display:inline-block;
-margin-top:30px;
-padding:15px 35px;
-background:#34d399;
-color:black;
-font-weight:bold;
-border-radius:8px;
-text-decoration:none;
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  background:#22c55e;
+  color:#020617;
+  padding:15px 32px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:900;
 }
 
 .section{
-padding:60px 20px;
-max-width:1000px;
-margin:auto;
+  padding:55px 8%;
+}
+
+.section h2{
+  font-size:34px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px;
 }
 
 .card{
-background:#1f2937;
-padding:25px;
-margin:20px 0;
-border-radius:10px;
+  background:#111827;
+  border:1px solid #1f2937;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.tag{
+  display:inline-block;
+  background:#064e3b;
+  color:#86efac;
+  padding:7px 12px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
+}
+
+.pick{
+  font-size:28px;
+  font-weight:900;
+  margin:14px 0;
+}
+
+.stat{
+  display:flex;
+  justify-content:space-between;
+  border-bottom:1px solid #263244;
+  padding:11px 0;
+  color:#d1d5db;
+}
+
+.edge{
+  color:#22c55e;
+  font-weight:900;
+}
+
+.warning{
+  color:#facc15;
+  font-size:14px;
+  margin-top:12px;
+}
+
+.premium{
+  background:linear-gradient(135deg,#1e1b4b,#111827);
+  border:1px solid #6366f1;
 }
 
 footer{
-text-align:center;
-padding:40px;
-background:#111827;
-margin-top:60px;
+  text-align:center;
+  padding:35px;
+  background:#0f172a;
+  color:#94a3b8;
+}
+
+@media(max-width:700px){
+  header{display:block;text-align:center}
+  nav{margin-top:15px}
+  nav a{display:inline-block;margin:8px}
+  .hero h1{font-size:38px}
 }
 </style>
-
 </head>
 
 <body>
 
 <header>
-<div class="logo">SportBettingIQ101</div>
-
-<nav>
-<a href="#">Home</a>
-<a href="#">Daily Picks</a>
-<a href="#">Premium</a>
-<a href="#">Results</a>
-</nav>
+  <div class="logo">SportBettingIQ101</div>
+  <nav>
+    <a href="#picks">Picks</a>
+    <a href="#matchups">Matchups</a>
+    <a href="#premium">Premium</a>
+    <a href="#results">Results</a>
+  </nav>
 </header>
 
 <section class="hero">
-<h1>Beat the Sportsbooks.</h1>
-<p>Research. Data. Value Picks.</p>
-
-<a class="button" href="#">Today's Picks</a>
+  <h1>Smarter Sports Betting Research</h1>
+  <p>Betting splits, line movement, matchup stats, value edges, and daily MLB research in one place.</p>
+  <a class="btn" href="#picks">View Today’s Board</a>
 </section>
 
-<section class="section">
+<section class="section" id="picks">
+  <h2>🔥 Featured Pick of the Day</h2>
 
-<div class="card">
-<h2>⚾ Daily MLB Research</h2>
-<p>Pitching matchups, sharp money, betting splits, line movement, trends, and advanced statistics.</p>
-</div>
+  <div class="card">
+    <span class="tag">Best Value</span>
+    <div class="pick">Phillies Moneyline</div>
 
-<div class="card">
-<h2>💎 Premium Picks</h2>
-<p>Coming Soon.</p>
-</div>
+    <div class="stat"><span>Vegas Implied Probability</span><span>52%</span></div>
+    <div class="stat"><span>Model Projection</span><span>58%</span></div>
+    <div class="stat"><span>Value Edge</span><span class="edge">+6%</span></div>
+    <div class="stat"><span>Public Bets</span><span>41%</span></div>
+    <div class="stat"><span>Money Percentage</span><span>63%</span></div>
 
-<div class="card">
-<h2>📈 Verified Results</h2>
-<p>Every pick tracked publicly.</p>
-</div>
+    <p class="warning">Note: Replace these numbers with today’s real data before posting.</p>
+  </div>
+</section>
 
+<section class="section" id="matchups">
+  <h2>⚾ Today’s MLB Matchup Board</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <span class="tag">Sharp Money Watch</span>
+      <h3>Phillies vs Royals</h3>
+      <div class="stat"><span>Pick</span><span>Phillies ML</span></div>
+      <div class="stat"><span>Line Movement</span><span>-120 → -135</span></div>
+      <div class="stat"><span>Bet Split</span><span>41%</span></div>
+      <div class="stat"><span>Money Split</span><span class="edge">63%</span></div>
+      <div class="stat"><span>Confidence</span><span>7.8/10</span></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Total Watch</span>
+      <h3>Rays vs Orioles</h3>
+      <div class="stat"><span>Pick</span><span>Under 8.5</span></div>
+      <div class="stat"><span>Wind</span><span>In from CF</span></div>
+      <div class="stat"><span>Pitching Edge</span><span>Strong</span></div>
+      <div class="stat"><span>Public Bets</span><span>36%</span></div>
+      <div class="stat"><span>Money Split</span><span class="edge">59%</span></div>
+    </div>
+
+    <div class="card">
+      <span class="tag">Underdog Value</span>
+      <h3>Rangers vs Blue Jays</h3>
+      <div class="stat"><span>Pick</span><span>Rangers ML</span></div>
+      <div class="stat"><span>Odds</span><span>+125</span></div>
+      <div class="stat"><span>Implied Chance</span><span>44%</span></div>
+      <div class="stat"><span>Projected Chance</span><span class="edge">50%</span></div>
+      <div class="stat"><span>Value Edge</span><span class="edge">+6%</span></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="premium">
+  <h2>💎 Premium Picks</h2>
+
+  <div class="card premium">
+    <h3>Coming Soon</h3>
+    <p>Premium members will get top-rated picks, props, underdog value plays, sharp-money alerts, and weekly betting reports.</p>
+    <a class="btn" href="#">Join Waitlist</a>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <h2>📈 Results Tracker</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Overall Record</h3>
+      <div class="pick">0-0</div>
+      <p>Start tracking every posted play publicly.</p>
+    </div>
+
+    <div class="card">
+      <h3>ROI</h3>
+      <div class="pick">0%</div>
+      <p>Track profit/loss transparently.</p>
+    </div>
+
+    <div class="card">
+      <h3>Best Category</h3>
+      <div class="pick">TBD</div>
+      <p>Moneyline, totals, props, or underdogs.</p>
+    </div>
+  </div>
 </section>
 
 <footer>
-
-SportBettingIQ101 © 2026
-
+  SportBettingIQ101 © 2026 | Research-based betting content. Not financial advice.
 </footer>
 
 </body>
 </html>
+
+
